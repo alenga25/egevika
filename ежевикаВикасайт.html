@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Студия красоты «Ежевика» | Плесецк</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 100px 20px 80px;
+    background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
+    border-bottom: 1px solid #2a2a2a;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 64px;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  .hero .subtitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    color: #d4b3e6;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+  }
+  .hero .services {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: -30px auto 50px;
+    max-width: 1000px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+  nav a {
+    background: #2a2a2a;
+    color: #ffffff;
+    padding: 14px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: 1px solid #3a3a3a;
+    transition: 0.3s;
+  }
+  nav a:hover {
+    background: #d4b3e6;
+    color: #121212;
+    border-color: #d4b3e6;
+    transform: translateY(-2px);
+  }
+
+  /* SECTIONS */
+  section {
+    background: #1e1e1e;
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin-bottom: 40px;
+    border: 1px solid #2a2a2a;
+  }
+  section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+  }
+  section p { text-align: center; font-size: 16px; color: #cccccc; }
+
+  /* PRICE */
+  .price-category { margin-bottom: 40px; }
+  .price-category h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    color: #d4b3e6;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .price-master {
+    font-size: 15px;
+    color: #d4b3e6;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #333333;
+    font-size: 16px;
+    color: #e0e0e0;
+  }
+  .price-item:last-child { border-bottom: none; }
+  .price-item span:last-child { color: #d4b3e6; font-weight: 600; white-space: nowrap; padding-left: 15px; }
+
+  /* MASTERS */
+  .masters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+  }
+  .master-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .master-card {
+    background: #252525;
+    border-radius: 20px;
+    padding: 30px 24px;
+    text-align: center;
+    border: 1px solid #333333;
+    transition: 0.3s;
+    height: 100%;
+  }
+  .master-card:hover {
+    transform: translateY(-5px);
+    border-color: #d4b3e6;
+    box-shadow: 0 10px 30px rgba(212, 179, 230, 0.15);
+  }
+  .master-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #d4b3e6;
+    background: #333;
+  }
+  .master-card h3 { color: #ffffff; font-size: 20px; margin-bottom: 6px; font-weight: 600; }
+  .master-card .role { font-size: 12px; color: #d4b3e6; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+  .master-card .bio { font-size: 14px; color: #a0a0a0; margin-bottom: 15px; line-height: 1.5; text-align: left; }
+  .master-card .phone { font-size: 15px; font-weight: 600; color: #ffffff; }
+
+  /* EDUCATION & LUBOV */
+  .edu-intro {
+    text-align: center;
+    font-size: 17px;
+    color: #e0e0e0;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.7;
+  }
+  .edu-subtitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    color: #d4b3e6;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 40px;
+  }
+  .custom-list {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .custom-list li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    color: #e0e0e0;
+    font-size: 15px;
+    border-bottom: 1px solid #2a2a2a;
+    text-align: left;
+    line-height: 1.5;
+  }
+  .custom-list li:last-child { border-bottom: none; }
+  .custom-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #d4b3e6;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .edu-courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+  }
+  .edu-course-card {
+    background: #252525;
+    border-radius: 20px;
+    padding: 30px 26px;
+    border: 1px solid #333333;
+    transition: 0.3s;
+  }
+  .edu-course-card:hover {
+    border-color: #d4b3e6;
+    box-shadow: 0 10px 30px rgba(212, 179, 230, 0.1);
+  }
+  .edu-course-card h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    color: #d4b3e6;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .edu-course-card .course-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 15px;
+    color: #e0e0e0;
+    border-bottom: 1px dashed #333;
+  }
+  .edu-course-card .course-info:last-of-type { border-bottom: none; }
+  .edu-course-card .course-info span:last-child { color: #d4b3e6; font-weight: 600; }
+
+  /* QR */
+  .qr-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+  }
+  .qr-item { text-align: center; }
+  .qr-item img {
+    width: 160px;
+    height: 160px;
+    border-radius: 16px;
+    background: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .qr-caption {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    color: #d4b3e6;
+    font-size: 15px;
+    margin-top: 12px;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  /* CONTACTS */
+  .contacts p { font-size: 17px; margin: 12px 0; color: #e0e0e0; }
+  .contacts a { color: #d4b3e6; text-decoration: none; font-weight: 600; }
+  .contacts a:hover { text-decoration: underline; }
+
+  /* BUTTON */
+  .btn {
+    display: inline-block;
+    background: transparent;
+    color: #d4b3e6;
+    padding: 16px 45px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: 1px solid #d4b3e6;
+    margin-top: 15px;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background: #d4b3e6;
+    color: #121212;
+    box-shadow: 0 0 20px rgba(212, 179, 230, 0.3);
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666666;
+    font-size: 13px;
+    border-top: 1px solid #2a2a2a;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 42px; letter-spacing: 4px; }
+    .hero .subtitle { font-size: 18px; }
+    section { padding: 35px 20px; }
+    section h2 { font-size: 28px; }
+    .price-category h3 { font-size: 20px; }
+    .edu-subtitle { font-size: 20px; }
+    nav a { padding: 12px 18px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
+<header class="hero">
+  <h1>ЕЖЕВИКА</h1>
+  <div class="subtitle">территория красоты и стиля</div>
+  <div class="services">
+    ногтевой сервис ~ ресницы и брови ~ парикмахерские услуги ~ косметология и пирсинг ~ массаж и коррекция фигуры
+  </div>
+</header>
+
+<!-- НАВИГАЦИЯ -->
+<nav>
+  <a href="#about">О нас</a>
+  <a href="#price">Прайс</a>
+  <a href="#masters">Мастера</a>
+  <a href="#lyubov">Косметология</a>
+  <a href="#education">Обучение</a>
+  <a href="#gallery">Фото работ</a>
+  <a href="#contacts">Контакты</a>
+</nav>
+
+<div class="container">
+
+  <!-- О НАС -->
+  <section id="about">
+    <h2>О нас</h2>
+    <p>🤍 Добро пожаловать в студию красоты «Ежевика» — пространство, где вам спокойно, уютно и красиво.</p>
+    <p style="margin-top: 15px;">Мы рядом, когда хочется ухоженных рук, выразительных глаз, ровных бровей, сияющей кожи и лёгкой причёски.</p>
+    <p style="margin-top: 25px; color: #d4b3e6;">🕊️ Работаем: Пн–Сб с 08:00 до 20:00, Вс — выходной.</p>
+  </section>
+
+  <!-- ПРАЙС -->
+  <section id="price">
+    <h2>Прайс</h2>
+
+    <!-- МАНИКЮР -->
+    <div class="price-category">
+      <h3>Маникюр / Моделирование ногтей</h3>
+
+      <p class="price-master">Виктория Доронская</p>
+      <div class="price-item"><span>Маникюр без покрытия</span><span>1000 ₽</span></div>
+      <div class="price-item"><span>Маникюр с покрытием однотон</span><span>2000 ₽</span></div>
+      <div class="price-item"><span>Дизайн</span><span>от 100 ₽</span></div>
+      <div class="price-item"><span>Френч / градиент</span><span>от 2200 ₽</span></div>
+      <div class="price-item"><span>Наращивание ногтей (однотон)</span><span>от 2700 ₽</span></div>
+      <div class="price-item"><span>Наращивание ногтей с дизайном</span><span>от 3000 ₽</span></div>
+      <div class="price-item"><span>Коррекция наращенных ногтей</span><span>от 2300 ₽</span></div>
+      <div class="price-item"><span>SPA-система для рук</span><span>500 ₽</span></div>
+      <div class="price-item"><span>Снятие чужого покрытия</span><span>300 ₽</span></div>
+
+      <p class="price-master">Карина Панютина / Полина Лаухина / Светлана Изжеурова</p>
+      <div class="price-item"><span>Маникюр без покрытия</span><span>1000 ₽</span></div>
+      <div class="price-item"><span>Маникюр с покрытием однотон</span><span>1900 ₽</span></div>
+      <div class="price-item"><span>Дизайн</span><span>от 100 ₽</span></div>
+      <div class="price-item"><span>Френч / градиент</span><span>2100 ₽</span></div>
+      <div class="price-item"><span>Наращивание ногтей (однотон)</span><span>от 2500 ₽</span></div>
+      <div class="price-item"><span>Наращивание ногтей с дизайном</span><span>от 2800 ₽</span></div>
+      <div class="price-item"><span>Коррекция наращенных ногтей</span><span>от 2300 ₽</span></div>
+      <div class="price-item"><span>SPA-система для рук</span><span>500 ₽</span></div>
+      <div class="price-item"><span>Снятие чужого покрытия</span><span>300 ₽</span></div>
+    </div>
+
+    <!-- ПЕДИКЮР -->
+    <div class="price-category">
+      <h3>Педикюр</h3>
+      <p class="price-master">Полина Лаухина</p>
+      <div class="price-item"><span>Обработка пальчиков с покрытием</span><span>1700 ₽</span></div>
+      <div class="price-item"><span>Обработка пальчиков без покрытия</span><span>1000 ₽</span></div>
+      <div class="price-item"><span>Обработка стопы и пальчиков без покрытия</span><span>1700 ₽</span></div>
+      <div class="price-item"><span>С покрытием и обработкой стопы</span><span>2200 ₽</span></div>
+      <div class="price-item"><span>Обработка онихолизиса</span><span>от 1000 ₽</span></div>
+      <div class="price-item"><span>Протезирование</span><span>от 500 ₽</span></div>
+      <div class="price-item"><span>Обработка грибковых ногтей</span><span>от 1000 ₽</span></div>
+      <div class="price-item"><span>Установка пластины</span><span>2500 ₽</span></div>
+    </div>
+
+    <!-- РЕСНИЦЫ / БРОВИ -->
+    <div class="price-category">
+      <h3>Ресницы / Брови</h3>
+      <p class="price-master">Виктория Серебренникова</p>
+      <div class="price-item"><span>Коррекция бровей (воск / пинцет)</span><span>300 ₽</span></div>
+      <div class="price-item"><span>Окрашивание бровей краской</span><span>300 ₽</span></div>
+      <div class="price-item"><span>Ламинирование ресниц с окрашиванием</span><span>1200 ₽</span></div>
+      <div class="price-item"><span>Восковая эпиляция лица</span><span>600 ₽</span></div>
+    </div>
+
+    <!-- НАРАЩИВАНИЕ РЕСНИЦ -->
+    <div class="price-category">
+      <h3>Наращивание ресниц LED / классика</h3>
+      <p class="price-master">Виктория Серебренникова</p>
+      <div class="price-item"><span>Классика</span><span>1900 ₽</span></div>
+      <div class="price-item"><span>2D</span><span>2000 ₽</span></div>
+      <div class="price-item"><span>3D</span><span>2100 ₽</span></div>
+      <div class="price-item"><span>4D</span><span>2200 ₽</span></div>
+      <div class="price-item"><span>5D</span><span>2400 ₽</span></div>
+      <div class="price-item"><span>Мокрый эффект</span><span>2200 ₽</span></div>
+      <div class="price-item"><span>Снятие (моё) без последующего наращивания</span><span>200 ₽</span></div>
+      <div class="price-item"><span>Чужое снятие</span><span>200 ₽</span></div>
+      <div class="price-item"><span>Чужое снятие без последующего наращивания</span><span>500 ₽</span></div>
+    </div>
+
+    <p style="margin-top: 25px; font-size: 13px; color: #666;">* Точную стоимость уточняйте у мастеров или в сообщениях сообщества.</p>
+  </section>
+
+  <!-- МАСТЕРА -->
+  <section id="masters">
+    <h2>Наши мастера</h2>
+    <div class="masters-grid">
+
+      <a href="https://vk.ru/id433513636" target="_blank" class="master-link">
+        <div class="master-card">
+          <img src="Вика.jpg" alt="Виктория Доронская">
+          <h3>Виктория Доронская</h3>
+          <div class="role">Основатель студии • Топ-мастер</div>
+          <div class="bio">Опыт более 7 лет. Дипломированный инструктор и тренер по ногтевому сервису. Неоднократный участник и победитель международных чемпионатов.</div>
+          <div class="phone">+7 (981) 554-65-52</div>
+        </div>
+      </a>
+
+      <a href="https://vk.ru/serebrennikova2020" target="_blank" class="master-link">
+        <div class="master-card">
+          <img src="dbrf.jpg" alt="Виктория Серебренникова">
+          <h3>Виктория Серебренникова</h3>
+          <div class="role">Ресницы • Брови • Макияж</div>
+          <div class="bio">В профессии с 2023 года. LED-наращивание и ламинирование ресниц, оформление и долговременная укладка бровей, макияж.</div>
+          <div class="phone">8 (902) 700-46-99</div>
+        </div>
+      </a>
+
+      <a href="https://vk.ru/svetaantonova25" target="_blank" class="master-link">
+        <div class="master-card">
+          <img src="Sveta.jpg" alt="Светлана Изжеурова">
+          <h3>Светлана Изжеурова</h3>
+          <div class="role">Маникюр • Наращивание ногтей</div>
+          <div class="bio">В профессии более 5 лет. Аккуратность, скорость и качество — её главные принципы.</div>
+          <div class="phone">8 (911) 871-06-35</div>
+        </div>
+      </a>
+
+      <a href="https://vk.ru/polinayuryevna10" target="_blank" class="master-link">
+        <div class="master-card">
+          <img src="gjkbyf.jpg"Полина Лаухина">
+          <h3>Полина Лаухина</h3>
+          <div class="role">Педикюр • Маникюр</div>
+          <div class="bio">Опыт более 4 лет. Работает со сложными стопами, выполняет протезирование и установку пластин. Возможен выезд на дом.</div>
+          <div class="phone">8 (921) 070-36-66</div>
+        </div>
+      </a>
+
+      <a href="https://vk.ru/id450749687" target="_blank" class="master-link">
+        <div class="master-card">
+          <img src="rfhbyf.jpg" alt="Карина Панютина">
+          <h3>Карина Панютина</h3>
+          <div class="role">Мужские • Детские стрижки</div>
+          <div class="bio">Стаж более 4 лет. Найдёт подход к любому клиенту — и к взрослому, и к ребёнку.</div>
+          <div class="phone">8 (953) 265-73-58</div>
+        </div>
+      </a>
+
+      <a href="https://vk.ru/egevikapleseck" target="_blank" class="master-link">
+        <div class="master-card">
+          <img src="https://via.placeholder.com/150" alt="Елена">
+          <h3>Елена</h3>
+          <div class="role">Женские стрижки • Окрашивание</div>
+          <div class="bio">В профессии 2 года. Женские стрижки, окрашивание волос и реконструкция.</div>
+          <div class="phone">8 (902) 504-09-77</div>
+        </div>
+      </a>
+
+      <a href="https://vk.ru/egevikapleseck" target="_blank" class="master-link">
+        <div class="master-card">
+          <img src="k.,f.jpg" alt="Любовь">
+          <h3>Любовь</h3>
+          <div class="role">Косметолог • Массажист</div>
+          <div class="bio">Специалист по красоте и здоровью. Медицинское образование. Широкий спектр аппаратных и эстетических процедур для лица и тела.</div>
+          <div class="phone">Запись в ЛС</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- КОСМЕТОЛОГИЯ (ЛЮБОВЬ) -->
+  <section id="lyubov">
+    <h2>Косметология и массаж</h2>
+    
+    <div style="max-width:800px; margin:0 auto;">
+      <p style="font-size:18px; margin-bottom:20px;">Знакомьтесь: <b>Любовь</b> — наш специалист по красоте и здоровью! 🌟</p>
+      <p style="color:#d4b3e6; font-weight:600; margin-bottom:10px;">Образование: медицинское</p>
+      
+      <h3 class="edu-subtitle" style="margin-top:20px;">Сертификаты и курсы:</h3>
+      
+      <ul class="custom-list">
+        <li><b>👩‍⚕️ «Прессотерапия. Теория и практика», 2024</b><br>Любовь поможет вам эффективно избавиться от лишнего объема тела, улучшить лимфодренаж и кровообращение!</li>
+        <li><b>💉 «Работа с аппаратом WL-12», 2024</b><br>Высококлассный уход за кожей лица и тела с использованием передовых технологий.</li>
+        <li><b>🧖‍♀️ «Flax Peel Face — атравматичная чистка лица», 2024</b><br>Безопасная и комфортная чистка, сохраняющая красоту вашей кожи.</li>
+        <li><b>🔥 «Flax Lift — восстановление тонуса кожи», 2024</b><br>Возвращение коже упругости и свежести благодаря инновационным методикам.</li>
+        <li><b>🏋️‍♂️ «Flax Sculpt — восстановление кожи», 2024</b><br>Процедуры, направленные на улучшение структуры и качества кожи, чтобы вы чувствовали себя уверенно каждый день.</li>
+        <li><b>❄️ «Flax Cryo — неопарафинная криотерапия лица», 2024</b><br>Процедура охлаждения для улучшения цвета лица и уменьшения отечности.</li>
+        <li><b>🍊 «Flax New Skin — липосомальный пилинг», 2024</b><br>Пилинг, обеспечивающий глубокое очищение и обновление клеток кожи.</li>
+        <li><b>📌 «Пирсинг классический и интимный», 2024</b><br>Профессиональный подход к созданию уникального образа.</li>
+        <li><b>☃️ «Работа с аппаратом Smart Ice Blue», 2025</b><br>Аппаратные процедуры для эффективного ухода за кожей и поддержания её молодости.</li>
+        <li><b>🐳 «Липолитики по животу», 2025</b><br>Моделирование силуэта и избавление от локальных жировых отложений.</li>
+      </ul>
+
+      <h3 class="edu-subtitle" style="margin-top:30px;">🎯 Почему выбирают Любовь?</h3>
+      <ul class="custom-list">
+        <li><b>Медицинское образование</b> гарантирует безопасность процедур</li>
+        <li><b>Широкий спектр услуг</b> для комплексного ухода за лицом и телом</li>
+        <li><b>Индивидуальный подход</b> к каждому клиенту</li>
+        <li><b>Современные методики</b> и оборудование</li>
+      </ul>
+
+      <div style="text-align:center; margin-top:30px;">
+        <a class="btn" href="https://vk.ru/egevikapleseck" target="_blank">Записаться к Любови</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОБУЧЕНИЕ -->
+  <section id="education">
+    <h2>Обучение</h2>
+
+    <p style="text-align:center; color:#d4b3e6; font-size:14px; letter-spacing:1px; margin-bottom:20px;">АККРЕДИТОВАННЫЕ ПРОГРАММЫ</p>
+
+    <p class="edu-intro">
+      Студия красоты «Ежевика» — это не только место, где делают красиво. Это ещё и школа, где обучают профессии. Все курсы проходят под руководством основателя студии <b>Виктории Доронской</b> — дипломированного инструктора и тренера по ногтевому сервису.
+    </p>
+    
+    <p class="edu-intro">
+      По окончании курсов вы получите <b>свидетельство о профессии государственного образца</b> с внесением в реестр и методическое пособие.
+    </p>
+
+    <h3 class="edu-subtitle">Программы обучения</h3>
+    <ul class="custom-list">
+      <li>Базовый курс «Nail мастер»</li>
+      <li>Базовый курс «Салонный педикюр»</li>
+      <li>Базовый курс «Эстетический педикюр»</li>
+      <li>Курс повышения квалификации «Гель. Секреты тонких ногтей»</li>
+      <li>Курс повышения квалификации «Моделирование ногтей. Верхние формы»</li>
+    </ul>
+
+    <h3 class="edu-subtitle">Курсы по педикюру</h3>
+    <div class="edu-courses">
+      <div class="edu-course-card">
+        <h4>Эстетический педикюр</h4>
+        <div class="course-info"><span>Длительность</span><span>1 день</span></div>
+        <div class="course-info"><span>Модели</span><span>2 модели</span></div>
+        <div class="course-info"><span>Стоимость</span><span>20 000 ₽</span></div>
+        <div class="course-info"><span>Доп. модель</span><span>+2 000 ₽</span></div>
+      </div>
+      <div class="edu-course-card">
+        <h4>Салонный педикюр</h4>
+        <div class="course-info"><span>Длительность</span><span>2 дня</span></div>
+        <div class="course-info"><span>Модели</span><span>3 модели</span></div>
+        <div class="course-info"><span>Стоимость</span><span>25 000 ₽</span></div>
+        <div class="course-info"><span>Доп. модель</span><span>+3 000 ₽</span></div>
+      </div>
+    </div>
+
+    <h3 class="edu-subtitle">Почему выбирают «Ежевику»</h3>
+    <ul class="custom-list">
+      <li><b>Опытные мастера</b> — профессионалы с многолетним опытом работы</li>
+      <li><b>Современное оборудование</b> — только качественные инструменты и материалы</li>
+      <li><b>Индивидуальный подход</b> — обучение с учётом уровня каждого студента</li>
+      <li><b>Гибкий график</b> — курсы доступны в удобное для вас время</li>
+    </ul>
+
+    <h3 class="edu-subtitle">Что даёт документ гос. образца</h3>
+    <ul class="custom-list">
+      <li><b>Право работать официально</b> — легально оказывать услуги, открыть ИП или студию, работать в салоне</li>
+      <li><b>Рост доверия от клиентов</b> — подтверждённая квалификация повышает статус и позволяет поднимать цены</li>
+      <li><b>Преимущество при проверках</b> — документ гос. образца подтверждает право на работу</li>
+      <li><b>Профессиональный рост и уверенность</b> — официальное образование даёт новый уровень уверенности в своих услугах</li>
+    </ul>
+
+    <p style="text-align:center; color:#d4b3e6; font-weight:bold; margin-top:30px; font-size:18px;">🔥 Возможность обучения за счёт социального контракта</p>
+    <p style="text-align:center; color:#aaa; font-size:14px;">Каждый ученик, прошедший курс, может получить документ государственного образца.</p>
+
+    <div style="text-align:center; margin-top:25px;">
+      <a class="btn" href="tel:+79815546552">Записаться на курс</a>
+      <p style="margin-top:15px; color:#aaa; font-size:14px;">
+        Написать: <a href="https://vk.ru/egevikapleseck" target="_blank" style="color:#d4b3e6; text-decoration:none;">личные сообщения ВК</a> или по телефону <a href="tel:+79815546552" style="color:#d4b3e6; text-decoration:none;">+7 (981) 554-65-52</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ФОТО РАБОТ -->
+  <section id="gallery">
+    <h2>Фото работ</h2>
+    <p>Посмотреть все работы можно в нашем фотоальбоме ВКонтакте.</p>
+    <div style="text-align:center;">
+      <a class="btn" href="https://vk.ru/egevikapleseck" target="_blank">Смотреть фото работ</a>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+  <section id="contacts" class="contacts">
+    <h2>Контакты</h2>
+    <p>📍 <strong>Адрес:</strong> рп. Плесецк, ул. Котрехова, 12А</p>
+    <p>🕊️ <strong>График:</strong> Пн–Сб 08:00–20:00, Вс — выходной</p>
+    <p>💌 <strong>Запись:</strong> <a href="https://vk.ru/egevikapleseck" target="_blank">сообщения сообщества ВК</a></p>
+
+    <div class="qr-block">
+      <div class="qr-item">
+        <img src="кюар.jpg"">
+        <p class="qr-caption">Наведите камеру, чтобы перейти в группу</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 Студия красоты «Ежевика» • Плесецк
+</footer>
+
+</body>
+</html>
